@@ -16,9 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{868DD5E4-4990-4A0F-B88E-1BC9B0153596}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Events", "Events", "{EDEB2951-831B-4510-B41A-1E5503D362BC}"
-	ProjectSection(SolutionItems) = preProject
-		src\Modules\Events\Evently.Modules.Events.Api\Events\Tags.cs = src\Modules\Events\Evently.Modules.Events.Api\Events\Tags.cs
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Api", "src\API\Evently.Api\Evently.Api.csproj", "{9769B144-592E-4B4C-870B-D13D6B03A582}"
 EndProject
