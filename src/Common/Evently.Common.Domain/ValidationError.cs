@@ -1,7 +1,7 @@
 ﻿namespace Evently.Common.Domain;
 public sealed record ValidationError : Error
 {
-    private ValidationError(Error[] errors)
+    public ValidationError(Error[] errors)
         : base(
             "General.Validation",
             "One or more validation errors occurred",
