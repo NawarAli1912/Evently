@@ -1,6 +1,6 @@
-﻿using Evently.Modules.Events.Application.Abstractions.Data;
-using Evently.Modules.Events.Application.Abstractions.Messaging;
-using Evently.Modules.Events.Domain.Abstractions;
+﻿using Evently.Common.Application.Messaging;
+using Evently.Common.Domain;
+using Evently.Modules.Events.Application.Abstractions.Data;
 using Evently.Modules.Events.Domain.TicketTypes;
 
 namespace Evently.Modules.Events.Application.TicketTypes.UpdateTicketTypePrice;
@@ -16,7 +16,7 @@ internal sealed class UpdateTicketTypePriceCommandHandler(
 
         if (ticketType is null)
         {
-            return Result.Failure(TicketTypeErrors.NotFound(request.TicketTypeId));
+            return TicketTypeErrors.NotFound(request.TicketTypeId);
         }
 
         ticketType.UpdatePrice(request.Price);

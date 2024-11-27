@@ -1,5 +1,5 @@
-﻿using Evently.Modules.Events.Application.Events.SearchEvents;
-using Evently.Modules.Events.Domain.Abstractions;
+﻿using Evently.Common.Domain;
+using Evently.Modules.Events.Application.Events.SearchEvents;
 using Evently.Modules.Events.Presentation.ApiResults;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -12,9 +12,9 @@ internal static class SearchEvents
 {
     public static void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapGet("events/search", async(
+        app.MapGet("events/search", async (
             ISender sender,
-            Guid ? categoryId,
+            Guid? categoryId,
             DateTime? startDate,
             DateTime? endDate,
             int page = 0,
