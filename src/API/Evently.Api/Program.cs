@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen(options =>
     options.CustomSchemaIds(t => t.FullName?.Replace("+", "."));
 });
 
+
 builder.Services.AddApplication([
     Evently.Modules.Events.Application.AssemblyReference.Assembly,
 ]);
@@ -19,8 +20,9 @@ builder.Services.AddApplication([
 builder.Services.AddInfrastructure(
     builder.Configuration.GetConnectionString("Database")!);
 
-builder.Services.AddEventModule(builder.Configuration);
+builder.Configuration.AddModuleConfiguration(["events"]);
 
+builder.Services.AddEventModule(builder.Configuration);
 
 WebApplication app = builder.Build();
 
