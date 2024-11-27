@@ -60,7 +60,7 @@ internal sealed class GetEventQueryHandler(IDbConnectionFactory dbConnectionFact
 
         if (!eventsDictionary.TryGetValue(request.EventId, out EventResponse eventResponse))
         {
-            return Result.Failure<EventResponse>(EventErrors.NotFound(request.EventId));
+            return EventErrors.NotFound(request.EventId);
         }
 
         return eventResponse;

@@ -18,19 +18,19 @@ internal sealed class PublishEventCommandHandler(
 
         if (@event is null)
         {
-            return Result.Failure(EventErrors.NotFound(request.EventId));
+            return EventErrors.NotFound(request.EventId);
         }
 
         if (!await ticketTypeRepository.ExistsAsync(@event.Id, cancellationToken))
         {
-            return Result.Failure(EventErrors.NoTicketsFound);
+            return EventErrors.NoTicketsFound;
         }
 
         Result result = @event.Publish();
 
         if (result.IsFailure)
         {
-            return Result.Failure(result.Error);
+            return result.Error;
         }
 
         await unitOfWork.SaveChangesAsync(cancellationToken);

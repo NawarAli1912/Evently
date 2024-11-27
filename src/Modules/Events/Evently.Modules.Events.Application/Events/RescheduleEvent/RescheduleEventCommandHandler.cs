@@ -18,12 +18,12 @@ internal sealed class RescheduleEventCommandHandler(
 
         if (@event is null)
         {
-            return Result.Failure(EventErrors.NotFound(request.EventId));
+            return EventErrors.NotFound(request.EventId);
         }
 
         if (request.StartsAtUtc < dateTimeProvider.UtcNow)
         {
-            return Result.Failure(EventErrors.StartDateInPast);
+            return EventErrors.StartDateInPast;
         }
 
         @event.Reschedule(request.StartsAtUtc, request.EndsAtUtc);
