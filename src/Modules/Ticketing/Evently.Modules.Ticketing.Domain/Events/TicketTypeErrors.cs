@@ -7,6 +7,9 @@ public static class TicketTypeErrors
     public static Error NotFound(Guid ticketTypeId) =>
         Error.NotFound("TicketTypes.NotFound", $"The ticket type with the identifier {ticketTypeId} was not found");
 
+    public static Error NotFound() =>
+        Error.NotFound("TicketTypes.NotAllFound", $"Some of the tickets was not found");
+
     public static Error NotEnoughQuantity(decimal availableQuantity) =>
         Error.Problem(
             "TicketTypes.NotEnoughQuantity",

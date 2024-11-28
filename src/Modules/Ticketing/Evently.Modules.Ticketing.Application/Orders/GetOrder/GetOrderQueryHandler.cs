@@ -57,7 +57,7 @@ internal sealed class GetOrderQueryHandler(IDbConnectionFactory dbConnectionFact
 
         if (!ordersDictionary.TryGetValue(request.OrderId, out OrderResponse orderResponse))
         {
-            return Result.Failure<OrderResponse>(OrderErrors.NotFound(request.OrderId));
+            return OrderErrors.NotFound(request.OrderId);
         }
 
         return orderResponse;

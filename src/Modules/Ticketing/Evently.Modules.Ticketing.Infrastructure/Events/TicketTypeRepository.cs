@@ -11,18 +11,19 @@ internal sealed class TicketTypeRepository(TicketingDbContext context) : ITicket
         return await context.TicketTypes.SingleOrDefaultAsync(t => t.Id == id, cancellationToken);
     }
 
-    public async Task<TicketType?> GetWithLockAsync(Guid id, CancellationToken cancellationToken = default)
+    public async Task<List<TicketType>> GetWithLockAsync(IEnumerable<Guid> ids, CancellationToken cancellationToken = default)
     {
+        string idList = string.Join(",", ids.Select(id => $"'{id}'"));
         return await context
             .TicketTypes
             .FromSql(
                 $"""
                 SELECT id, event_id, name, price, currency, quantity, available_quantity
                 FROM ticketing.ticket_types
-                WHERE id = {id}
+                WHERE id IN ({idList})
                 FOR UPDATE NOWAIT
-                """)
-            .SingleOrDefaultAsync(cancellationToken);
+            """)
+            .ToListAsync(cancellationToken);
     }
 
     public void InsertRange(IEnumerable<TicketType> ticketTypes)

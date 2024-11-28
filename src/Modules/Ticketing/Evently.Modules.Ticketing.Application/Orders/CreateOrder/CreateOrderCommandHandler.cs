@@ -28,7 +28,7 @@ internal sealed class CreateOrderCommandHandler(
 
         if (customer is null)
         {
-            return Result.Failure(CustomerErrors.NotFound(request.CustomerId));
+            return CustomerErrors.NotFound(request.CustomerId);
         }
 
         var order = Order.Create(customer);
@@ -37,17 +37,23 @@ internal sealed class CreateOrderCommandHandler(
 
         if (!cart.Items.Any())
         {
-            return Result.Failure(CartErrors.Empty);
+            return CartErrors.Empty;
+        }
+
+        IEnumerable<Guid> ticketTypeIds = cart.Items.Select(item => item.TicketTypeId);
+
+        var ticketTypes = (await ticketTypeRepository
+                .GetWithLockAsync(ticketTypeIds, cancellationToken))
+                .ToDictionary(tt => tt.Id);
+
+        if (ticketTypes.Keys.Count != cart.Items.Count)
+        {
+            return TicketTypeErrors.NotFound();
         }
 
         foreach (CartItem cartItem in cart.Items)
         {
-            // This acquires a pessimistic lock or throws an exception if already locked.
-            TicketType? ticketType = await ticketTypeRepository.GetWithLockAsync(
-                cartItem.TicketTypeId,
-                cancellationToken);
-
-            if (ticketType is null)
+            if (!ticketTypes.TryGetValue(cartItem.TicketTypeId, out TicketType? ticketType))
             {
                 return Result.Failure(TicketTypeErrors.NotFound(cartItem.TicketTypeId));
             }

@@ -4,7 +4,7 @@ namespace Evently.Modules.Ticketing.Application.Carts;
 
 public sealed class CartService(ICacheService cacheService)
 {
-    private static readonly TimeSpan DefaultExpiration = TimeSpan.FromMinutes(20);
+    private static readonly TimeSpan DefaultExpiration = TimeSpan.FromMinutes(30);
 
     public async Task<Cart> GetAsync(Guid customerId, CancellationToken cancellationToken = default)
     {
@@ -45,7 +45,7 @@ public sealed class CartService(ICacheService cacheService)
         await cacheService.SetAsync(cacheKey, cart, DefaultExpiration, cancellationToken);
     }
 
-    public async Task RemoveItemAsync(Guid customerId, Guid ticketTypeId, CancellationToken cancellationToken = default)
+    public async Task RemoveItemAsync(Guid customerId, Guid ticketTypeId, decimal quantity, CancellationToken cancellationToken = default)
     {
         string cacheKey = CreateCacheKey(customerId);
 
@@ -57,8 +57,13 @@ public sealed class CartService(ICacheService cacheService)
         {
             return;
         }
+        cartItem.Quantity -= Math.Min(cartItem.Quantity, quantity);
 
-        cart.Items.Remove(cartItem);
+        if (cartItem.Quantity == 0)
+        {
+            cart.Items.Remove(cartItem);
+        }
+
 
         await cacheService.SetAsync(cacheKey, cart, DefaultExpiration, cancellationToken);
     }

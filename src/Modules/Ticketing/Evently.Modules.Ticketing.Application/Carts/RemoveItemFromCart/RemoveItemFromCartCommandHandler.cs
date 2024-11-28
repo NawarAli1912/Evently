@@ -17,17 +17,17 @@ internal sealed class RemoveItemFromCartCommandHandler(
 
         if (customer is null)
         {
-            return Result.Failure(CustomerErrors.NotFound(request.CustomerId));
+            return CustomerErrors.NotFound(request.CustomerId);
         }
 
         TicketType? ticketType = await ticketTypeRepository.GetAsync(request.TicketTypeId, cancellationToken);
 
         if (ticketType is null)
         {
-            return Result.Failure(TicketTypeErrors.NotFound(request.TicketTypeId));
+            return TicketTypeErrors.NotFound(request.TicketTypeId);
         }
 
-        await cartService.RemoveItemAsync(customer.Id, ticketType.Id, cancellationToken);
+        await cartService.RemoveItemAsync(customer.Id, ticketType.Id, request.Quantity, cancellationToken);
 
         return Result.Success();
     }
