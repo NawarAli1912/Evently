@@ -47,7 +47,7 @@ builder.Configuration.AddModuleConfiguration(["events", "users", "ticketing"]);
 
 builder.Services.AddEventModule(builder.Configuration);
 builder.Services.AddUsersModule(builder.Configuration);
-builder.Services.AddTicketingModule(builder.Configuration);
+builder.Services.AddTicketingModule();
 
 WebApplication app = builder.Build();
 

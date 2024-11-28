@@ -1,23 +1,22 @@
 ﻿using Evently.Common.Presentation.Endpoints;
-using Microsoft.Extensions.Configuration;
+using Evently.Modules.Ticketing.Application.Carts;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Evently.Modules.Ticketing.Infrastructure;
 public static class TicketingModule
 {
     public static IServiceCollection AddTicketingModule(
-        this IServiceCollection services,
-        IConfiguration configuration)
+        this IServiceCollection services)
     {
-        services.AddInfrastructure(configuration);
+        services.AddInfrastructure();
 
         services.AddEndpoints(Presentation.AssemblyReference.Assembly);
 
         return services;
     }
 
-    private static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    private static void AddInfrastructure(this IServiceCollection services)
     {
-        throw new NotImplementedException();
+        services.AddSingleton<CartService>();
     }
 }

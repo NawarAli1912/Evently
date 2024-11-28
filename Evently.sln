@@ -37,27 +37,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Common.Domain", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Common.Infrastructure", "src\Common\Evently.Common.Infrastructure\Evently.Common.Infrastructure.csproj", "{0E80A646-8609-4403-8F9C-AD028A1B3722}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Common.Presentation", "src\Common\Evently.Common.Presentation\Evently.Common.Presentation.csproj", "{99E914FA-B7FF-4FBC-93B8-AE537598E2AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Common.Presentation", "src\Common\Evently.Common.Presentation\Evently.Common.Presentation.csproj", "{99E914FA-B7FF-4FBC-93B8-AE537598E2AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{0FDCD5D9-0614-4DDE-9C42-01624D6F9990}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Users.Domain", "src\Modules\Users\Evently.Modules.Users.Domain\Evently.Modules.Users.Domain.csproj", "{C858AC5A-C449-4DAF-B96B-067A50463A4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Users.Domain", "src\Modules\Users\Evently.Modules.Users.Domain\Evently.Modules.Users.Domain.csproj", "{C858AC5A-C449-4DAF-B96B-067A50463A4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Users.Application", "src\Modules\Users\Evently.Modules.Users.Application\Evently.Modules.Users.Application.csproj", "{A0FA1633-5236-4085-ADF7-8C18A181E895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Users.Application", "src\Modules\Users\Evently.Modules.Users.Application\Evently.Modules.Users.Application.csproj", "{A0FA1633-5236-4085-ADF7-8C18A181E895}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Users.Infrastructure", "src\Modules\Users\Evently.Modules.Users.Infrastructure\Evently.Modules.Users.Infrastructure.csproj", "{D69F7322-990F-4B51-8FBF-67677DAB2A42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Users.Infrastructure", "src\Modules\Users\Evently.Modules.Users.Infrastructure\Evently.Modules.Users.Infrastructure.csproj", "{D69F7322-990F-4B51-8FBF-67677DAB2A42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Users.Presentation", "src\Modules\Users\Evently.Modules.Users.Presentation\Evently.Modules.Users.Presentation.csproj", "{E3BBD863-F287-4528-B62C-969E24740B43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Users.Presentation", "src\Modules\Users\Evently.Modules.Users.Presentation\Evently.Modules.Users.Presentation.csproj", "{E3BBD863-F287-4528-B62C-969E24740B43}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticketing", "Ticketing", "{72C07733-B82A-4CBB-A6C6-5089EBC92047}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Ticketing.Domain", "src\Modules\Ticketing\Evently.Modules.Ticketing.Domain\Evently.Modules.Ticketing.Domain.csproj", "{B5815E2B-3598-4FEF-97BE-D3FF421ADE57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Ticketing.Domain", "src\Modules\Ticketing\Evently.Modules.Ticketing.Domain\Evently.Modules.Ticketing.Domain.csproj", "{B5815E2B-3598-4FEF-97BE-D3FF421ADE57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Ticketing.Application", "src\Modules\Ticketing\Evently.Modules.Ticketing.Application\Evently.Modules.Ticketing.Application.csproj", "{76ECE731-1C95-4A2E-8E7B-3009D80144E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Ticketing.Application", "src\Modules\Ticketing\Evently.Modules.Ticketing.Application\Evently.Modules.Ticketing.Application.csproj", "{76ECE731-1C95-4A2E-8E7B-3009D80144E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Ticketing.Infrastructure", "src\Modules\Ticketing\Evently.Modules.Ticketing.Infrastructure\Evently.Modules.Ticketing.Infrastructure.csproj", "{BED67997-954F-41CF-A21D-A2166903133D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Ticketing.Infrastructure", "src\Modules\Ticketing\Evently.Modules.Ticketing.Infrastructure\Evently.Modules.Ticketing.Infrastructure.csproj", "{BED67997-954F-41CF-A21D-A2166903133D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Ticketing.Presentation", "src\Modules\Ticketing\Evently.Modules.Ticketing.Presentation\Evently.Modules.Ticketing.Presentation.csproj", "{18690AFC-431D-4370-AC84-78E34984FE7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Ticketing.Presentation", "src\Modules\Ticketing\Evently.Modules.Ticketing.Presentation\Evently.Modules.Ticketing.Presentation.csproj", "{18690AFC-431D-4370-AC84-78E34984FE7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Users.PublicApi", "src\Modules\Users\Evently.Modules.Users.PublicApi\Evently.Modules.Users.PublicApi.csproj", "{CE283202-F707-43BA-8F26-EFDA550783B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Events.PublicApi", "src\Modules\Events\Evently.Modules.Events.PublicApi\Evently.Modules.Events.PublicApi.csproj", "{7D28EA1F-40CD-4938-9076-82A2A9B52037}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +141,14 @@ Global
 		{18690AFC-431D-4370-AC84-78E34984FE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18690AFC-431D-4370-AC84-78E34984FE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18690AFC-431D-4370-AC84-78E34984FE7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE283202-F707-43BA-8F26-EFDA550783B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE283202-F707-43BA-8F26-EFDA550783B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE283202-F707-43BA-8F26-EFDA550783B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE283202-F707-43BA-8F26-EFDA550783B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D28EA1F-40CD-4938-9076-82A2A9B52037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D28EA1F-40CD-4938-9076-82A2A9B52037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D28EA1F-40CD-4938-9076-82A2A9B52037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D28EA1F-40CD-4938-9076-82A2A9B52037}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +177,8 @@ Global
 		{76ECE731-1C95-4A2E-8E7B-3009D80144E8} = {72C07733-B82A-4CBB-A6C6-5089EBC92047}
 		{BED67997-954F-41CF-A21D-A2166903133D} = {72C07733-B82A-4CBB-A6C6-5089EBC92047}
 		{18690AFC-431D-4370-AC84-78E34984FE7E} = {72C07733-B82A-4CBB-A6C6-5089EBC92047}
+		{CE283202-F707-43BA-8F26-EFDA550783B5} = {0FDCD5D9-0614-4DDE-9C42-01624D6F9990}
+		{7D28EA1F-40CD-4938-9076-82A2A9B52037} = {EDEB2951-831B-4510-B41A-1E5503D362BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49316404-1168-4559-9226-8546A914782C}
