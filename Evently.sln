@@ -49,6 +49,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Users.Infra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Users.Presentation", "src\Modules\Users\Evently.Modules.Users.Presentation\Evently.Modules.Users.Presentation.csproj", "{E3BBD863-F287-4528-B62C-969E24740B43}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticketing", "Ticketing", "{72C07733-B82A-4CBB-A6C6-5089EBC92047}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Ticketing.Domain", "src\Modules\Ticketing\Evently.Modules.Ticketing.Domain\Evently.Modules.Ticketing.Domain.csproj", "{B5815E2B-3598-4FEF-97BE-D3FF421ADE57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Ticketing.Application", "src\Modules\Ticketing\Evently.Modules.Ticketing.Application\Evently.Modules.Ticketing.Application.csproj", "{76ECE731-1C95-4A2E-8E7B-3009D80144E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Ticketing.Infrastructure", "src\Modules\Ticketing\Evently.Modules.Ticketing.Infrastructure\Evently.Modules.Ticketing.Infrastructure.csproj", "{BED67997-954F-41CF-A21D-A2166903133D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Ticketing.Presentation", "src\Modules\Ticketing\Evently.Modules.Ticketing.Presentation\Evently.Modules.Ticketing.Presentation.csproj", "{18690AFC-431D-4370-AC84-78E34984FE7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +121,22 @@ Global
 		{E3BBD863-F287-4528-B62C-969E24740B43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3BBD863-F287-4528-B62C-969E24740B43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3BBD863-F287-4528-B62C-969E24740B43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5815E2B-3598-4FEF-97BE-D3FF421ADE57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5815E2B-3598-4FEF-97BE-D3FF421ADE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5815E2B-3598-4FEF-97BE-D3FF421ADE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5815E2B-3598-4FEF-97BE-D3FF421ADE57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76ECE731-1C95-4A2E-8E7B-3009D80144E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76ECE731-1C95-4A2E-8E7B-3009D80144E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76ECE731-1C95-4A2E-8E7B-3009D80144E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76ECE731-1C95-4A2E-8E7B-3009D80144E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED67997-954F-41CF-A21D-A2166903133D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED67997-954F-41CF-A21D-A2166903133D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED67997-954F-41CF-A21D-A2166903133D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED67997-954F-41CF-A21D-A2166903133D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18690AFC-431D-4370-AC84-78E34984FE7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18690AFC-431D-4370-AC84-78E34984FE7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18690AFC-431D-4370-AC84-78E34984FE7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18690AFC-431D-4370-AC84-78E34984FE7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,6 +160,11 @@ Global
 		{A0FA1633-5236-4085-ADF7-8C18A181E895} = {0FDCD5D9-0614-4DDE-9C42-01624D6F9990}
 		{D69F7322-990F-4B51-8FBF-67677DAB2A42} = {0FDCD5D9-0614-4DDE-9C42-01624D6F9990}
 		{E3BBD863-F287-4528-B62C-969E24740B43} = {0FDCD5D9-0614-4DDE-9C42-01624D6F9990}
+		{72C07733-B82A-4CBB-A6C6-5089EBC92047} = {868DD5E4-4990-4A0F-B88E-1BC9B0153596}
+		{B5815E2B-3598-4FEF-97BE-D3FF421ADE57} = {72C07733-B82A-4CBB-A6C6-5089EBC92047}
+		{76ECE731-1C95-4A2E-8E7B-3009D80144E8} = {72C07733-B82A-4CBB-A6C6-5089EBC92047}
+		{BED67997-954F-41CF-A21D-A2166903133D} = {72C07733-B82A-4CBB-A6C6-5089EBC92047}
+		{18690AFC-431D-4370-AC84-78E34984FE7E} = {72C07733-B82A-4CBB-A6C6-5089EBC92047}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49316404-1168-4559-9226-8546A914782C}
