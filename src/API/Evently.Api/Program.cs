@@ -34,6 +34,7 @@ builder.Services.AddApplication([
 string databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
 string redisConnectionString = builder.Configuration.GetConnectionString("Cache")!;
 builder.Services.AddInfrastructure(
+    [TicketingModule.ConfigureConsumers],
     databaseConnectionString,
     redisConnectionString
     );
