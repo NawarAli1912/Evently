@@ -24,6 +24,7 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddApplication([
     Evently.Modules.Events.Application.AssemblyReference.Assembly,
+    Evently.Modules.Users.Application.AssemblyReference.Assembly
 ]);
 
 
@@ -39,7 +40,7 @@ builder.Services.AddHealthChecks()
     .AddRedis(redisConnectionString);
 
 
-builder.Configuration.AddModuleConfiguration(["events"]);
+builder.Configuration.AddModuleConfiguration(["events", "users"]);
 
 builder.Services.AddEventModule(builder.Configuration);
 
