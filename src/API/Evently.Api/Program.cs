@@ -60,15 +60,19 @@ if (app.Environment.IsDevelopment())
     app.ApplyMigration();
 }
 
+app.MapEndpoints();
+
 app.MapHealthChecks("health", new HealthCheckOptions
 {
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
 
-app.MapEndpoints();
-
 app.UseSerilogRequestLogging();
 
 app.UseExceptionHandler();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
 
 await app.RunAsync();
