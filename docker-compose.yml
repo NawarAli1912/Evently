@@ -49,6 +49,6 @@ services:
         - KEYCLOAK_ADMIN_PASSWORD=admin
       volumes:
         - ./.containers/identity:/opt/keycloak/data
-        - ./.keycloak:/opt/keycloak/data/import
+        - ./.files:/opt/keycloak/data/import
       ports:
         - 18080:8080
