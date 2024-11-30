@@ -3,25 +3,22 @@ using System;
 using Evently.Modules.Users.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Evently.Modules.Users.Infrastructure.Database.Migrations
+namespace Evently.Modules.Users.Infrastructure.Databse.Migrations
 {
     [DbContext(typeof(UsersDbContext))]
-    [Migration("20240411134449_Create_Database")]
-    partial class Create_Database
+    partial class UsersDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasDefaultSchema("users")
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -45,6 +42,11 @@ namespace Evently.Modules.Users.Infrastructure.Database.Migrations
                         .HasColumnType("character varying(200)")
                         .HasColumnName("first_name");
 
+                    b.Property<string>("IdentityId")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("identity_id");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(200)
@@ -57,6 +59,10 @@ namespace Evently.Modules.Users.Infrastructure.Database.Migrations
                     b.HasIndex("Email")
                         .IsUnique()
                         .HasDatabaseName("ix_users_email");
+
+                    b.HasIndex("IdentityId")
+                        .IsUnique()
+                        .HasDatabaseName("ix_users_identity_id");
 
                     b.ToTable("users", "users");
                 });
