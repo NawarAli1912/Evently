@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 
 namespace Evently.Common.Infrastructure.Authorization;
-internal class PermissionAuthorizationHandler : AuthorizationHandler<PermissionRequirement>
+internal sealed class PermissionAuthorizationHandler : AuthorizationHandler<PermissionRequirement>
 {
     protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, PermissionRequirement requirement)
     {
