@@ -21,7 +21,7 @@ public class RemoveFromCart : IEndpoint
 
             return result.Match(() => Results.Ok(), ApiResults.Problem);
         })
-        .RequireAuthorization()
+        .RequireAuthorization(Permissions.RemoveFromCart)
         .WithTags(Tags.Carts);
     }
 

@@ -53,7 +53,7 @@ public sealed class TicketType : Entity
     {
         if (AvailableQuantity < quantity)
         {
-            return Result.Failure(TicketTypeErrors.NotEnoughQuantity(AvailableQuantity));
+            return TicketTypeErrors.NotEnoughQuantity(AvailableQuantity);
         }
 
         AvailableQuantity -= quantity;

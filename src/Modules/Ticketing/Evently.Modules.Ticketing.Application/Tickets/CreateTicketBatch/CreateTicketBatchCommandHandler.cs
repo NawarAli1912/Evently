@@ -20,14 +20,14 @@ internal sealed class CreateTicketBatchCommandHandler(
 
         if (order is null)
         {
-            return Result.Failure(OrderErrors.NotFound(request.OrderId));
+            return OrderErrors.NotFound(request.OrderId);
         }
 
         Result result = order.IssueTickets();
 
         if (result.IsFailure)
         {
-            return Result.Failure(result.Error);
+            return result.Error;
         }
 
         List<Ticket> tickets = [];
@@ -37,7 +37,7 @@ internal sealed class CreateTicketBatchCommandHandler(
 
             if (ticketType is null)
             {
-                return Result.Failure(TicketTypeErrors.NotFound(orderItem.TicketTypeId));
+                return TicketTypeErrors.NotFound(orderItem.TicketTypeId);
             }
 
             for (int i = 0; i < orderItem.Quantity; i++)

@@ -55,7 +55,7 @@ internal sealed class CreateOrderCommandHandler(
         {
             if (!ticketTypes.TryGetValue(cartItem.TicketTypeId, out TicketType? ticketType))
             {
-                return Result.Failure(TicketTypeErrors.NotFound(cartItem.TicketTypeId));
+                return TicketTypeErrors.NotFound(cartItem.TicketTypeId);
             }
 
             Result result = ticketType.UpdateQuantity(cartItem.Quantity);
