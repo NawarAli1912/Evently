@@ -1,6 +1,7 @@
 ﻿using Evently.Common.Domain;
 using Evently.Common.Presentation.ApiResults;
 using Evently.Common.Presentation.Endpoints;
+using Evently.Modules.Ticketing.Application.Abstractions.Authentication;
 using Evently.Modules.Ticketing.Application.Carts.RemoveItemFromCart;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -12,10 +13,10 @@ public class RemoveFromCart : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPut("cart/remove", async (Request request, ISender sender) =>
+        app.MapPut("cart/remove", async (Request request, ICustomerContext customerContext, ISender sender) =>
         {
             Result result = await sender.Send(new RemoveItemFromCartCommand(
-                request.CustomerId,
+                customerContext.CustomerId,
                 request.TicketTypeId,
                 request.Quantity));
 
@@ -27,8 +28,6 @@ public class RemoveFromCart : IEndpoint
 
     internal sealed class Request
     {
-        public Guid CustomerId { get; init; }
-
         public Guid TicketTypeId { get; init; }
 
         public decimal Quantity { get; init; }

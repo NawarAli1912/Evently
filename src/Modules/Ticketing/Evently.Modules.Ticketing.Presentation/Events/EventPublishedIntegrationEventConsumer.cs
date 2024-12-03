@@ -6,8 +6,8 @@ using MassTransit;
 using MediatR;
 
 namespace Evently.Modules.Ticketing.Presentation.Events;
-internal sealed class EventPublishedIntegrationEventConsumer(ISender sender) :
-        IConsumer<EventPublishedIntegrationEvent>
+public sealed class EventPublishedIntegrationEventConsumer(ISender sender)
+    : IConsumer<EventPublishedIntegrationEvent>
 {
     public async Task Consume(ConsumeContext<EventPublishedIntegrationEvent> context)
     {

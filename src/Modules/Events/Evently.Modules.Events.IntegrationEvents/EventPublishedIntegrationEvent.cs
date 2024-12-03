@@ -6,7 +6,7 @@ public sealed class EventPublishedIntegrationEvent : IntegrationEvent
 {
     public EventPublishedIntegrationEvent(
         Guid id,
-        DateTime occurredOnUtc,
+        DateTime occuredOnUtc,
         Guid eventId,
         string title,
         string description,
@@ -14,7 +14,7 @@ public sealed class EventPublishedIntegrationEvent : IntegrationEvent
         DateTime startsAtUtc,
         DateTime? endsAtUtc,
         List<TicketTypeModel> ticketTypes)
-        : base(id, occurredOnUtc)
+        : base(id, occuredOnUtc)
     {
         EventId = eventId;
         Title = title;
